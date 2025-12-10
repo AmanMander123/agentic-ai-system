@@ -1,0 +1,67 @@
+# OS / Editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Python / FastAPI backend (backend/)
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.so
+*.egg-info/
+.eggs/
+.build/
+backend/dist/
+backend/build/
+.coverage
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+/.venv/
+/venv/
+/backend/.venv/
+/backend/venv/
+/backend/.env
+/frontend/env
+.env
+
+# Node / React frontend (frontend/)
+frontend/node_modules/
+.npm/
+.cache/
+yarn-error.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+.pnp.cjs
+.pnp.loader.mjs
+.pnp.js
+.pnp.ts
+.pnp.data.json
+.pnpm-debug.log
+.bun*
+
+# React build output
+build/
+dist/
+coverage/
+frontend/build/
+frontend/dist/
+frontend/coverage/
+*.tsbuildinfo
+
+# Docker
+**/.dockerignore
+**/.docker/
+*.log
+
+# Misc
+*.local
+*.tmp
+*.pid

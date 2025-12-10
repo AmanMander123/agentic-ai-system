@@ -39,4 +39,11 @@ Building a transparent, production-ready virtual assistant stack in public: from
 - Issues will track work items; PRs welcome once the baseline lands.
 
 ## Status
-- Kickoff: diagram + plan in place. Initial code drops next.
+- Kickoff ✅: diagram + plan in place.
+- Backend scaffold ✅: FastAPI app with `/health` and `/agent/query`. The agent endpoint uses `openai-agents` and pulls the OpenAI API key from GCP Secret Manager (no secrets in repo), keyed by `GCP_PROJECT_ID` + secret name.
+
+## Next steps (options under evaluation)
+- **Output guardrails**: JSON schema/Pydantic validation; retries/repair; OpenAI JSON mode; Guardrails.ai/Outlines; moderation/safety filters (OpenAI/Vertex/custom regex); risk-based escalation to human/clarify.
+- **Prompts + grounding**: versioned prompt templates; RAG with hybrid search (pgvector/Pinecone/Qdrant/Weaviate); retrieval scoring gates; schema checks before output; fallbacks when context is weak.
+- **Structured autonomy**: LangGraph/state machines for planning; tool allowlists with input/output validation and rate limits; step/depth caps; scoped memory (conversation window + summaries + retrieval memory); dead-end detection with graceful handoff.
+- **Observability**: OpenTelemetry tracing across app/LLM/tools; structured logs with trace IDs; metrics for latency/token/rate limits/guardrail outcomes; LangSmith/Arize Phoenix for LLM traces/evals; store prompt/response versions for replay and offline evals.
